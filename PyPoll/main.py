@@ -6,9 +6,10 @@ import csv
 election_data_csv = os.path.join("PyPoll", "Resources", "election_data.csv")
 
 # Then we initialize the variables
-total_votes = 0
 candidate_votes = {}
 candidates = []
+total_votes = 0
+
 
 # Instructions to read the csv file
 with open(election_data_csv) as csvfile:
@@ -54,7 +55,8 @@ print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
 
-# Exporting the analysis results to a text file in analyis folder called election_results.txt
+# Exporting the analysis results 
+# Saving results to a text file in analyis folder called election_results.txt
 output_file = os.path.join("PyPoll", "analysis", "election_results.txt")
 with open(output_file, "w") as txtfile:
     txtfile.write("Election Results\n")

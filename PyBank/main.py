@@ -7,10 +7,10 @@ budget_data_csv = os.path.join("PyBank", "Resources", "budget_data.csv")
 
 # Then initializing variables
 total_months = 0
-net_total = 0
-prev_profit = 0
 profit_changes = []
 months = []
+net_total = 0
+prev_profit = 0
 
 # Instructions to read the csv file
 with open(budget_data_csv) as csvfile:
@@ -51,7 +51,8 @@ print(f"Average Change: ${average_change:.2f}")
 print(f"Greatest Increase in Profits: {max_increase_month} (${max_increase})")
 print(f"Greatest Decrease in Profits: {max_decrease_month} (${max_decrease})")
 
-# Exporting the analysis results to a text file in analyis folder called financial_analysis.txt
+# Exporting the analysis results 
+# Saving to a text file in analyis folder called financial_analysis.txt
 output_file = os.path.join("PyBank", "analysis", "financial_analysis.txt")
 with open(output_file, "w") as txtfile:
     txtfile.write("Financial Analysis\n")
