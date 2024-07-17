@@ -44,8 +44,18 @@ with open(election_data_csv) as csvfile:
     csv_header = next(csvreader)
     for row in csvreader:
   Total number of votes are counted after that we get the candidates name 
+  total_votes += 1
+        candidate = row[2]
   If the candidate in not on list add them to list
+  if candidate not in candidates:
+            candidates.append(candidate)
+            candidate_votes[candidate] = 0
   After that increase the vote count of the  candidate
   Percentage of votes for each candidate is calculated
+  candidate_percentages = {}
+for candidate in candidates:
+    votes = candidate_votes[candidate]
+    percentage = (votes / total_votes) * 100
+    candidate_percentages[candidate] = percentage
   Printing the results to the terminal.
   Then the results are saved in a text file called election_results.txt
